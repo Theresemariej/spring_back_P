@@ -2,6 +2,10 @@ package monprojet.dto.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import monprojet.dao.entities.Verti;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Objet contenant des paramètres de l'entité nécessaires lors d'un transfert de donnée.
@@ -10,8 +14,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CityDTO {
+public class VertiDTO {
     private int id;
-    private String name;
-    private int population;
+    private String libelle;
+    private String oui;
+    private String non;
 }

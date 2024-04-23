@@ -1,13 +1,7 @@
 package monprojet.dao.entities;
-
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Size;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+
+import lombok.*;
 
 // Un exemple d'entité
 // On utilise Lombok pour auto-générer getter / setter / toString...
@@ -18,19 +12,23 @@ import lombok.ToString;
 @RequiredArgsConstructor
 @ToString
 @Entity // Une entité JPA
-public class City {
+public class Verti {
 
+    // Identifiant technique
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    // Identifiant métier (code ISO)
+    @Column
     @NonNull
-    @Size(min = 2)
-    private String name;
+    private String libelle;
 
-    private int population;
-
+    @Column
     @NonNull
-    @ManyToOne(optional = false) // obligatoire, la clé étrangère ne doit pas être nulle
-    Country country;
+    private String oui;
+
+    @Column
+    private String non;
+
 }
